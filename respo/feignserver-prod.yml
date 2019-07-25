@@ -4,7 +4,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://192.168.50.45:8080/eureka/
-
+  instance:
+    ip-address: 192.168.50.45
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
 spring:
   application:
     name: feign-consumer
@@ -16,4 +19,4 @@ spring:
 #        url: http://localhost:8889
 feign:
   hystrix:
-    enabled: false
+    enabled: true
