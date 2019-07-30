@@ -1,19 +1,9 @@
+profiles: dev
 spring:
   profiles:
-    active: prod
----
-
-server:
-  port: 8881
-spring:
+    active: dev
   application:
     name: service-hi
-  zipkin:
-    base-url: http://${eureka.instance.ip-address}:9411
-  boot:
-    admin:
-      client:
-        url: http://${eureka.instance.ip-address}:8889
   # 配置数据库信息
   datasource:
     # 数据源配置
@@ -28,10 +18,12 @@ spring:
     # 配置获取连接等待超时的时间
     max-wait: 60000
 eureka:
-  instance:
-    ip-address: 192.168.50.49
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
+  #  instance:
+  #    ip-address: 192.168.50.49
+  #    prefer-ip-address: true
+  #    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 8881

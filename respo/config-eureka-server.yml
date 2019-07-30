@@ -8,6 +8,12 @@ profiles: prod
 spring:
   application:
     name: eureka-server
+  zipkin:
+    base-url: http://${eureka.instance.ip-address}:9411
+  boot:
+    admin:
+      client:
+        url: http://${eureka.instance.ip-address}:8889
 server:
   port: 8080
 eureka:
@@ -16,7 +22,14 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
 
 ---
 profiles: dev
@@ -33,3 +46,17 @@ eureka:
 spring:
   application:
     name: eureka-server
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8889
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
