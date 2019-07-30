@@ -4,6 +4,12 @@ spring:
     active: dev
   application:
     name: service-hi
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8889
   # 配置数据库信息
   datasource:
     # 数据源配置
