@@ -31,7 +31,7 @@ eureka:
       defaultZone: http://192.168.50.49:8080/eureka/
 
 ---
-profiles: test
+profiles: dev
 spring:
   application:
     name: service-hi
@@ -55,6 +55,6 @@ eureka:
   #    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/
+      defaultZone: http://localhost:8080/eureka/
 server:
   port: 8881
