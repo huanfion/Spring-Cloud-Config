@@ -1,4 +1,4 @@
-
+foo: foo verion 1
 eureka:
   client:
     serviceUrl:
