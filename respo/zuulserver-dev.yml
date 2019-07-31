@@ -10,6 +10,8 @@ spring:
     admin:
       client:
         url: http://localhost:8889
+        instance:
+          prefer-ip: true        
 eureka:
   client:
     serviceUrl:

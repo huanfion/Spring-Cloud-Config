@@ -18,6 +18,8 @@ spring:
     admin:
       client:
         url: http://${eureka.instance.ip-address}:8889
+        instance:
+          prefer-ip: true      
 zuul:
   routes:
     api-a:
