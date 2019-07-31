@@ -16,9 +16,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://${eureka.instance.ip-address}:8889
-        instance:
-          prefer-ip: true        
+        url: http://${eureka.instance.ip-address}:8889    
 feign:
   hystrix:
     enabled: true

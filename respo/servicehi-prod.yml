@@ -13,9 +13,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://${eureka.instance.ip-address}:8889
-        instance:
-          prefer-ip: true        
+        url: http://${eureka.instance.ip-address}:8889      
   # 配置数据库信息
   datasource:
     # 数据源配置

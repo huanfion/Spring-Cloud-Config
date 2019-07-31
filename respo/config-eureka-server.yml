@@ -14,8 +14,6 @@ spring:
     admin:
       client:
         url: http://${eureka.instance.ip-address}:8889
-        instance:
-          prefer-ip: true
 server:
   port: 8080
 eureka:

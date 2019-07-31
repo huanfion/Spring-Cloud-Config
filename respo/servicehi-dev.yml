@@ -10,8 +10,17 @@ spring:
     admin:
       client:
         url: http://localhost:8889
-        instance:
-          prefer-ip: true        
+  rabbitmq:
+    host: 192.168.50.49
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+
   # 配置数据库信息
   datasource:
     # 数据源配置
