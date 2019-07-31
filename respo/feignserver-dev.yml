@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost/eureka/
+      defaultZone: http://localhost:8080/eureka/
 spring:
   application:
     name: feign-consumer
@@ -16,3 +16,11 @@ spring:
 feign:
   hystrix:
     enabled: true
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: * #health,info
