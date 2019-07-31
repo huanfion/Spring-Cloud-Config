@@ -23,4 +23,5 @@ management:
   endpoints:
     web:
       exposure:
-        include: * #health,info
+        #health,info
+        include: * 
