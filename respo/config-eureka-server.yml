@@ -1,10 +1,4 @@
-spring:
-  profiles:
-    acitve:
-      - prod
-
----
-profiles: prod
+profiles: node1
 spring:
   application:
     name: eureka-server
@@ -18,10 +12,10 @@ server:
   port: 8080
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8081/eureka/
 management:
   endpoint:
     health:
@@ -31,6 +25,33 @@ management:
       exposure:
         include: health,info
 
+---
+profiles: node2
+spring:
+  application:
+    name: eureka-server
+  zipkin:
+    base-url: http://${eureka.instance.ip-address}:9411
+  boot:
+    admin:
+      client:
+        url: http://${eureka.instance.ip-address}:8889
+server:
+  port: 8081
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
 ---
 profiles: dev
 server:
