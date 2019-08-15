@@ -1,5 +1,4 @@
 spring:
-  profiles: node2
   application:
     name: eureka-server
   zipkin:
