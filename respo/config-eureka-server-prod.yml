@@ -14,7 +14,7 @@ eureka:
   server:
     enable-self-preservation: false  # 开发环境关掉保护机制,快速发现已经挂掉的服务，生产环境需要设置为true提升服务稳定性
   instance:
-    hostname: eurekaserver1
+    hostname: storage.com
     prefer-ip-address: true
   client:
     register-with-eureka: true
@@ -47,7 +47,7 @@ eureka:
   server:
     enable-self-preservation: false  # 开发环境关掉保护机制,快速发现已经挂掉的服务，生产环境需要设置为true提升服务稳定性
   instance:
-    hostname: eurekaserver2
+    hostname: storage.com
     prefer-ip-address: true
   client:
     register-with-eureka: true
