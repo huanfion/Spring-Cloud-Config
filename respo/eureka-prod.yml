@@ -1,5 +1,5 @@
+profiles: node1
 spring:
-  profiles: node1
   application:
     name: eureka-server
   zipkin:
@@ -31,8 +31,8 @@ management:
         include: health,info
 
 ---
+profiles: node2
 spring:
-  profiles: node2
   application:
     name: eureka-server
   zipkin:
