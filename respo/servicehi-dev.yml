@@ -1,4 +1,3 @@
-foo: foo verion 2
 profiles: dev
 spring:
   profiles:
