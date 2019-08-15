@@ -1,0 +1,31 @@
+spring:
+  profiles: node1
+  application:
+    name: eureka-server
+  zipkin:
+    base-url: http://${eureka.instance.ip-address}:9411
+  boot:
+    admin:
+      client:
+        url: http://${eureka.instance.ip-address}:8889
+server:
+  port: 8080
+eureka:
+  server:
+    enable-self-preservation: false  # 开发环境关掉保护机制,快速发现已经挂掉的服务，生产环境需要设置为true提升服务稳定性
+  instance:
+    hostname: storage.com
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://192.168.50.49:8081/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
