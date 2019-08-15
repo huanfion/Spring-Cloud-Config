@@ -34,7 +34,7 @@ eureka:
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/
+      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.49:8081/eureka/
 management:
   endpoint:
     health:
