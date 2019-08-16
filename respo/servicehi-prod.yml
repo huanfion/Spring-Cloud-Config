@@ -2,7 +2,7 @@ spring:
   profiles:
     active: prod
 ---
-foo: version3
+foo: version4
 server:
   port: 8881
 spring:
