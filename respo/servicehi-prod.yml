@@ -2,7 +2,7 @@ spring:
   profiles:
     active: prod
 ---
-foo: version6
+foo: version8
 server:
   port: 8881
 spring:
@@ -14,6 +14,11 @@ spring:
     admin:
       client:
         url: http://${eureka.instance.ip-address}:8889
+  rabbitmq:
+    host: 192.168.50.49
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     bus:
       enabled: true
