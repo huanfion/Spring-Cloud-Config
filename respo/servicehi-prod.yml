@@ -2,7 +2,7 @@ spring:
   profiles:
     active: prod
 ---
-foo: version2
+foo: version3
 server:
   port: 8881
 spring:
@@ -23,7 +23,7 @@ spring:
     bus:
       enabled: true
     trace: 
-      enabled: true      
+      enabled: true # 开启消息跟踪     
   # 配置数据库信息
   datasource:
     # 数据源配置
