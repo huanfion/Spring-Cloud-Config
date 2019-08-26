@@ -8,12 +8,13 @@ server:
 spring:
   application:
     name: service-hi
+  # 服务链路追踪
   zipkin:
-    base-url: http://${eureka.instance.ip-address}:9411
+    base-url: http://192.168.50.49:9411
   boot:
     admin:
       client:
-        url: http://${eureka.instance.ip-address}:8889
+        url: http://192.168.50.49:8889
   rabbitmq:
     host: 192.168.50.49
     port: 5672
