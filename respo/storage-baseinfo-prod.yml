@@ -1,0 +1,52 @@
+foo: version8
+server:
+  port: 9901
+spring:
+  application:
+    name: storage-baseinfo
+  # 服务链路追踪
+  zipkin:
+    base-url: http://192.168.50.49:9411
+  boot:
+    admin:
+      client:
+        url: http://192.168.50.49:8889
+  rabbitmq:
+    host: 192.168.50.49
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+    trace: 
+      enabled: true # 开启消息跟踪     
+  # 配置数据库信息
+  datasource:
+    # 数据源配置
+    username: postgres
+    password: admin-123456
+    url: jdbc:postgresql://192.168.50.54:5432/zegobirdWMS_Basis?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: org.postgresql.Driver
+    # 初始化 最小 最大
+    initial-size: 5
+    min-idle: 5
+    max-active: 20
+    # 配置获取连接等待超时的时间
+    max-wait: 60000
+eureka:
+  instance:
+    ip-address: 192.168.50.49
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.49:8081/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
