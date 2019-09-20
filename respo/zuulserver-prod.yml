@@ -45,9 +45,7 @@ zuul:
       sensitiveHeaders: "*"
   retryable: false
   ignored-services: "*"
-  ribbon:
-    eager-load:
-      enabled: true
+
 # spring security oauth2
 security:
   oauth2:
