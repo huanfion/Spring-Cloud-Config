@@ -64,3 +64,13 @@ management:
     web:
       exposure:
         include: "*"
+
+hystrix: 
+	  command: 
+	    default: 
+	     execution: 
+	      timeout: #配置命令的执行，是否会超时
+	        enabled: true  
+	      isolation: #命令的执行超时时间  超时将执行回退
+	        thread: 
+	          timeoutInMilliseconds: 20000
