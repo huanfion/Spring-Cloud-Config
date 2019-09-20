@@ -31,12 +31,33 @@ spring:
       enabled: true # 开启消息跟踪            
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
-      serviceId: service-hi
-    api-b:
-      path: /api-b/**
-      serviceId:  feign-consumer
+    oauth2-server:
+      path: /zegooauth/**
+      serviceId: oauth2-server
+      sensitiveHeaders: "*"
+    storage-baseinfo:
+      path: /baseinfo/**
+      serviceId: storage-baseinfo
+      sensitiveHeaders: "*"
+    storage-product:
+      path: /product/**
+      serviceId: storage-product
+      sensitiveHeaders: "*"
+  retryable: false
+  ignored-services: "*"
+  ribbon:
+    eager-load:
+      enabled: true
+# spring security oauth2
+security:
+  oauth2:
+    client:
+      access-token-uri: http://192.168.50.49:${server.port}/zegooauth/oauth/token
+      user-authorization-uri: http://192.168.50.49:${server.port}/zegooauth/oauth/authorize
+      client-id: clientid
+    resource:
+      user-info-uri:  http://192.168.50.49:${server.port}/zegooauth/api/member
+      prefer-token-info: false
 management:
   endpoint:
     health:
