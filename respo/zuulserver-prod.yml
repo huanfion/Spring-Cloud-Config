@@ -45,6 +45,10 @@ zuul:
       sensitiveHeaders: "*"
   retryable: false
   ignored-services: "*"
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+
 
 # spring security oauth2
 security:
