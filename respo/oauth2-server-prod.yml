@@ -81,7 +81,7 @@ logging:
   config: classpath:logback-spring.xml
 swagger:
   auth:
-    server: http://192.168.50.63:8886/zegooauth/oauth/token
+    server: http://192.168.50.63:7006/oauth/token
 
 security:
   oauth2:
