@@ -87,5 +87,5 @@ security:
   oauth2:
     resource:
       id: oauth2-server
-      user-info-uri: http://192.168.50.49:8886/zegooauth/api/member
+      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
       prefer-token-info: false
