@@ -81,11 +81,11 @@ logging:
   config: classpath:logback-spring.xml
 swagger:
   auth:
-    server: http://192.168.50.63:8886/zegooauth/oauth/token
+    server: http://192.168.50.62:8886/zegooauth/oauth/token
 
 security:
   oauth2:
     resource:
       id: oauth2-server
-      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
+      user-info-uri: http://192.168.50.62:8886/zegooauth/api/member
       prefer-token-info: false
