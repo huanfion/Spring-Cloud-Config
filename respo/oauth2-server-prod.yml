@@ -50,7 +50,7 @@ spring:
     database: 0
 eureka:
   instance:
-    ip-address: 192.168.50.63
+    ip-address: 192.168.50.62
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
