@@ -43,6 +43,10 @@ zuul:
       path: /product/**
       serviceId: storage-product
       sensitiveHeaders: "*"
+    storage-warehouse:
+      path: /warehouse/**
+      serviceId:  warehouseService
+      sensitiveHeaders: "*"
   retryable: false
   ignored-services: "*"
   host:
