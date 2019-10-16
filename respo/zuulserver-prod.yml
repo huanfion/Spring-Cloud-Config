@@ -47,6 +47,10 @@ zuul:
       path: /warehouse/**
       serviceId:  warehouseService
       sensitiveHeaders: "*"
+    file-service:
+      path: /fileservice/**
+      serviceId:  FileInfoService
+      sensitiveHeaders: "*"
   retryable: false
   ignored-services: "*"
   host:
