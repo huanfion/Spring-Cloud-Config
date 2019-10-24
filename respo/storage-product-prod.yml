@@ -33,6 +33,9 @@ spring:
     max-active: 20
     # 配置获取连接等待超时的时间
     max-wait: 60000
+  redis:
+    url: redis://192.168.50.49:6379
+    database: 1
 eureka:
   instance:
     ip-address: 192.168.50.62
