@@ -89,3 +89,17 @@ security:
       id: oauth2-server
       user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
       prefer-token-info: false
+
+ribbon:
+  # 请求处理的超时时间
+  ReadTimeOut: 5000
+  # 请求连接的超时时间
+  ConnectTimeout: 2000
+  #hystrixTimeout要大于ribbonTimeout((ribbonReadTimeout + ribbonConnectTimeout) * (maxAutoRetries + 1) * (maxAutoRetriesNextServer + 1);) 
+histrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
