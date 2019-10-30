@@ -62,7 +62,9 @@ mybatis-plus:
 # spring boot集成mybatis的方式打印sql
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
+swagger:
+  auth:
+    server: http://192.168.50.63:8886/zegooauth/oauth/token
 logging:
   level:
     io.swagger.models.parameters.AbstractSerializableParameter: error
