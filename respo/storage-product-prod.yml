@@ -62,7 +62,7 @@ mybatis-plus:
 security:
   oauth2:
     resource:
-      id: oauth2-server
+      id: storage-product
       user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
       prefer-token-info: false
 swagger:
