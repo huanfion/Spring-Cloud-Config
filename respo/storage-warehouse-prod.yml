@@ -68,3 +68,9 @@ swagger:
 logging:
   level:
     io.swagger.models.parameters.AbstractSerializableParameter: error
+security:
+  oauth2:
+    resource:
+      id: warehouseService
+      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
+      prefer-token-info: false
