@@ -24,8 +24,8 @@ spring:
   datasource:
     # 数据源配置
     username: postgres
-    password: admin-123456
-    url: jdbc:postgresql://192.168.50.54:5432/zegobirdWMS_Basis?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: 123456
+    url: jdbc:postgresql://192.168.50.62:5432/zegobirdWMS_Basis?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
