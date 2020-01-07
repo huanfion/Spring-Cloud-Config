@@ -87,7 +87,7 @@ hystrix:
           enabled: true
         isolation: #命令的执行超时时间  超时将执行回退
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 80000
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
