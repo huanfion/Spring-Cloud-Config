@@ -107,3 +107,6 @@ histrix:
         isolation:
           thread:
             timeoutInMilliseconds: 300000
+
+menu:
+  itemkey: SystemManagement,BasicData,Product Management,systemConfiguration            
