@@ -109,4 +109,8 @@ histrix:
             timeoutInMilliseconds: 300000
 
 menu:
-  itemkey: SystemManagement,BasicData,Product Management,systemConfiguration            
+  specItemkey:
+    - SystemManagement
+    - BasicData
+    - ProductManagement
+    - systemConfiguration
