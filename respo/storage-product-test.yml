@@ -2,7 +2,7 @@ server:
   port: 9902
 spring:
   application:
-    name: oauth2-server
+    name: storage-product
   # 服务链路追踪
   zipkin:
     base-url: http://192.168.50.80:9411
