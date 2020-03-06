@@ -2,30 +2,30 @@ server:
   port: 9902
 spring:
   application:
-    name: storage-product
+    name: oauth2-server
   # 服务链路追踪
   zipkin:
-    base-url: http://192.168.50.49:9411
+    base-url: http://192.168.1.169:9411
   boot:
     admin:
       client:
-        url: http://192.168.50.49:8889
+        url: http://192.168.1.169:8889
   rabbitmq:
-    host: 192.168.50.49
+    host: 192.168.1.169
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: 123456
   cloud:
     bus:
       enabled: true
     trace: 
-      enabled: true # 开启消息跟踪     
+      enabled: true # 开启消息跟踪        
   # 配置数据库信息
   datasource:
     # 数据源配置
     username: postgres
     password: 123456
-    url: jdbc:postgresql://192.168.50.54:5432/zegobirdWMS_Product?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:postgresql://192.168.1.169:5432/zegobirdWMS_Product?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -42,16 +42,16 @@ spring:
       connection-timeout: 30000
       connection-test-query: select 1
   redis:
-    url: redis://192.168.50.49:6379
+    url: redis://192.168.1.169:6379
     database: 1
 eureka:
   instance:
-    ip-address: 192.168.50.62
+    ip-address: 192.168.1.169
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.61:8081/eureka/
+      defaultZone: http://192.168.1.169:8080/eureka/,http://192.168.1.170:8081/eureka/
 management:
   endpoint:
     health:
@@ -71,8 +71,8 @@ security:
   oauth2:
     resource:
       id: storage-product
-      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
+      user-info-uri: http://192.168.1.169:8886/zegooauth/api/member
       prefer-token-info: false
 swagger:
   auth:
-    server: http://192.168.50.63:8886/zegooauth/oauth/token
+    server: http://192.168.1.169:8886/zegooauth/oauth/token

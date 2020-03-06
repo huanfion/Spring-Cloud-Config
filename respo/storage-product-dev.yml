@@ -1,20 +1,20 @@
 server:
-  port: 9901
+  port: 9902
 spring:
   application:
-    name: oauth2-server
+    name: storage-product
   # 服务链路追踪
   zipkin:
-    base-url: http://192.168.1.169:9411
+    base-url: http://192.168.50.49:9411
   boot:
     admin:
       client:
-        url: http://192.168.1.169:8889
+        url: http://192.168.50.49:8889
   rabbitmq:
-    host: 192.168.1.169
+    host: 192.168.50.49
     port: 5672
-    username: admin
-    password: 123456
+    username: guest
+    password: guest
   cloud:
     bus:
       enabled: true
@@ -25,7 +25,7 @@ spring:
     # 数据源配置
     username: postgres
     password: 123456
-    url: jdbc:postgresql://192.168.1.169:5432/zegobirdWMS_Basis?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:postgresql://192.168.50.54:5432/zegobirdWMS_Product?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -41,14 +41,17 @@ spring:
       # 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒
       connection-timeout: 30000
       connection-test-query: select 1
+  redis:
+    url: redis://192.168.50.49:6379
+    database: 1
 eureka:
   instance:
-    ip-address: 192.168.1.169
+    ip-address: 192.168.50.62
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.169:8080/eureka/,http://192.168.1.170:8081/eureka/
+      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.61:8081/eureka/
 management:
   endpoint:
     health:
@@ -57,9 +60,7 @@ management:
     web:
       exposure:
         include: "*"
-swagger:
-  auth:
-    server: http://192.168.1.169:8886/zegooauth/oauth/token
+
 
 mybatis-plus:
 # spring boot集成mybatis的方式打印sql
@@ -69,6 +70,9 @@ mybatis-plus:
 security:
   oauth2:
     resource:
-      id: oauth2-server
-      user-info-uri: http://192.168.1.169:8886/zegooauth/api/member
+      id: storage-product
+      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
       prefer-token-info: false
+swagger:
+  auth:
+    server: http://192.168.50.63:8886/zegooauth/oauth/token
