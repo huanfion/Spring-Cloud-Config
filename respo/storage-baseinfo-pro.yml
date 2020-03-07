@@ -43,7 +43,7 @@ spring:
       connection-test-query: select 1
 eureka:
   instance:
-    ip-address: 192.168.1.169
+    ip-address: 192.168.1.170
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
