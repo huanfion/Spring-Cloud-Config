@@ -1,5 +1,5 @@
 server:
-  port: 8886
+  port: 15684
 eureka:
   instance:
     ip-address: 192.168.1.169
