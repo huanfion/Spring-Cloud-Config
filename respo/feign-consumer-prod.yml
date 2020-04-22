@@ -3,9 +3,9 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.49:8081/eureka/
+      defaultZone: http://192.168.50.83:8080/eureka/,http://192.168.50.83:8081/eureka/
   instance:
-    ip-address: 192.168.50.49
+    ip-address: 192.168.50.83
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
 spring:
@@ -18,7 +18,7 @@ spring:
       client:
         url: http://${eureka.instance.ip-address}:8889    
   rabbitmq:
-    host: 192.168.50.49
+    host: 192.168.50.83
     port: 5672
     username: guest
     password: guest

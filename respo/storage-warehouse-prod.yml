@@ -5,13 +5,13 @@ spring:
     name: warehouseService
   # 服务链路追踪
   zipkin:
-    base-url: http://192.168.50.49:9411
+    base-url: http://192.168.50.83:9411
   boot:
     admin:
       client:
-        url: http://192.168.50.49:8889
+        url: http://192.168.50.83:8889
   rabbitmq:
-    host: 192.168.50.49
+    host: 192.168.50.83
     port: 5672
     username: guest
     password: guest
@@ -48,7 +48,7 @@ eureka:
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.50.49:8080/eureka/,http://192.168.50.61:8081/eureka/
+      defaultZone: http://192.168.50.83:8080/eureka/,http://192.168.50.61:8081/eureka/
 management:
   endpoint:
     health:
