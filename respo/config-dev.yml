@@ -9,3 +9,9 @@ eureka:
     fetch-registry: true # 默认是true
     service-url:
       defaultZone: http://eureka01.com:7001/eureka/
+# 暴露监控断点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
