@@ -2,7 +2,7 @@ server:
   port: 15684
 eureka:
   instance:
-    ip-address: 192.168.1.169
+    ip-address: 192.168.10.124
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
@@ -14,17 +14,17 @@ spring:
     name: zuulserver
   # 服务链路追踪
   zipkin:
-    base-url: http://192.168.1.169:9411
+    base-url: http://192.168.10.124:9411
   boot:
     admin:
       client:
-        url: http://192.168.1.169:8889
+        url: http://192.168.10.124:8889
   # 消息总线相关配置
   rabbitmq:
-    host: 192.168.1.169
+    host: 192.168.10.124
     port: 5672
-    username: admin
-    password: 123456
+    username: guest
+    password: zego@123456
   cloud:
     bus:
       enabled: true
@@ -63,11 +63,11 @@ zuul:
 security:
   oauth2:
     client:
-      access-token-uri: http://192.168.1.169:${server.port}/zegooauth/oauth/token
-      user-authorization-uri: http://192.168.1.169:${server.port}/zegooauth/oauth/authorize
+      access-token-uri: http://192.168.10.124:${server.port}/zegooauth/oauth/token
+      user-authorization-uri: http://192.168.10.124:${server.port}/zegooauth/oauth/authorize
       client-id: clientid
     resource:
-      user-info-uri:  http://192.168.1.169:${server.port}/zegooauth/api/member
+      user-info-uri:  http://192.168.10.124:${server.port}/zegooauth/api/member
       prefer-token-info: false
 management:
   endpoint:

@@ -91,3 +91,4 @@ hystrix:
 ribbon:
   ReadTimeout: 90000
   ConnectTimeout: 90000
+#默认zuul会过滤掉cookie等header信息。解决：application.properties文件中添加 zuul.sensitive-headers=  

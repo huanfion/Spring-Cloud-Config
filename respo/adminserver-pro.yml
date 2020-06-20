@@ -1,10 +1,10 @@
 spring:
   # 消息总线相关配置
   rabbitmq:
-    host: 192.168.1.169
+    host: 192.168.10.124
     port: 5672
-    username: admin
-    password: 123456
+    username: guest
+    password: zego@123456
   cloud:
     bus:
       enabled: true
@@ -13,17 +13,17 @@ spring:
   application:
     name: adminserver
   zipkin:
-    base-url: http://192.168.1.169:9411
+    base-url: http://192.168.10.124:9411
 server:
   port: 8889
 eureka:
   instance:
-    ip-address: 192.168.1.169
+    ip-address: 192.168.10.124
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.169:8080/eureka/,http://192.168.1.170:8081/eureka/
+      defaultZone: http://192.168.10.124:8080/eureka/,http://192.168.10.125:8080/eureka/
 management:
   endpoint:
     health:
