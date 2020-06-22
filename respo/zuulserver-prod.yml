@@ -7,7 +7,7 @@ eureka:
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.169:8080/eureka/,http://192.168.1.170:8081/eureka/
+      defaultZone: http://192.168.10.124:8080/eureka/,http://192.168.10.125:8080/eureka/
 
 spring:
   application:
@@ -28,8 +28,8 @@ spring:
   cloud:
     bus:
       enabled: true
-    trace: 
-      enabled: true # 开启消息跟踪            
+    trace:
+      enabled: true # 开启消息跟踪
 zuul:
   routes:
     oauth2-server:
@@ -43,6 +43,10 @@ zuul:
     storage-product:
       path: /product/**
       serviceId: storage-product
+      sensitiveHeaders: "*"
+    storage-cloud:
+      path: /cloud/**
+      serviceId: storage-cloud
       sensitiveHeaders: "*"
     storage-warehouse:
       path: /warehouse/**
@@ -78,7 +82,7 @@ management:
       exposure:
         include: "*"
 
-#hystrixTimeout要大于ribbonTimeout((ribbonReadTimeout + ribbonConnectTimeout) * (maxAutoRetries + 1) * (maxAutoRetriesNextServer + 1);) 
+#hystrixTimeout要大于ribbonTimeout((ribbonReadTimeout + ribbonConnectTimeout) * (maxAutoRetries + 1) * (maxAutoRetriesNextServer + 1);)
 hystrix:
   command:
     default:
