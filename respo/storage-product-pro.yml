@@ -76,3 +76,5 @@ security:
 swagger:
   auth:
     server: http://192.168.10.124:8886/zegooauth/oauth/token
+apiurl:
+  queryCategory: http://192.168.10.171:8888/apiseller/api/queryCategory
