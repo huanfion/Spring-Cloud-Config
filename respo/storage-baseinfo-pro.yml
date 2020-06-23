@@ -74,4 +74,4 @@ security:
       prefer-token-info: false
 apiseller:
   api:
-    queryStore: http://192.168.1.135:8888/apiseller/api/queryStroe
+    queryStore: http://192.168.10.171:8888/apiseller/api/queryStroe
