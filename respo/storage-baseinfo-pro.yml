@@ -75,3 +75,4 @@ security:
 apiseller:
   api:
     queryStore: http://192.168.10.171:8888/apiseller/api/queryStroe
+    stroeType: 1,2,3,7,8
