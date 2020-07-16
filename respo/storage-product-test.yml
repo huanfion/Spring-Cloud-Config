@@ -78,3 +78,4 @@ swagger:
     server: http://192.168.50.75:8886/zegooauth/oauth/token
 apiurl:
   queryCategory: https://devtest.zegobird.com:11111/apiseller/api/queryCategory
+  updateStateUrl: http://192.168.50.58:5005/api/ProductInfo/UpdateProductState
