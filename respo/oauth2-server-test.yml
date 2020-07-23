@@ -114,3 +114,6 @@ menu:
     - BasicData
     - ProductManagement
     - systemConfiguration
+    
+pagehelper:
+  helper-dialect: postgresql
