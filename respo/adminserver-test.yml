@@ -1,7 +1,7 @@
 spring:
   # 消息总线相关配置
   rabbitmq:
-    host: 192.168.50.74
+    host: 192.168.50.75
     port: 5672
     username: admin
     password: 123456

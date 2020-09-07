@@ -31,7 +31,7 @@ spring:
     port: 25
 
   redis:
-    url: redis://192.168.50.74:6379
+    url: redis://192.168.50.75:6379
     database: 0
 
   cloud:
