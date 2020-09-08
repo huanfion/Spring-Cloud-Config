@@ -117,7 +117,7 @@ apiseller:
 
 zegobird:
   stockchange:
-    cron: '0 */5 * * * ?'
+    cron: '0 */1 * * * ?'
     #    cron: '*/30 * * * * ?'
     #    timeoutcron: '0 */15 * * * ?'
     #    timeoutcron: '*/30 * * * * ?'
