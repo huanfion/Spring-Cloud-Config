@@ -120,8 +120,11 @@ apiseller:
 zegobird:
   stockchange:
     cron: '0 */5 * * * ?'
+    enabled: true
 #    cron: '*/30 * * * * ?'
     pushStockToOmsCron: '0 */5 * * * ?'
+    pushStockToOmsEnabled: true
+    pushStockToOmsUrl: 111
 #    pushStockToOmsCron: '*/30 * * * * ?'
     messagetimeout: 600 # 以秒为单位
     msgSizeLimit: 500
@@ -137,3 +140,5 @@ zegobird:
   mail: liuhuan@zegobird.com,feining@zegobird.com,yupeng@zegobird.com
   signature:
     wmskey: WMSKEY
+    omskey: OMSKEY
+  timeZone: +8
