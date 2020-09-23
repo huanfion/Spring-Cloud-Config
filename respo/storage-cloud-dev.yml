@@ -123,8 +123,8 @@ zegobird:
     enabled: true
 #    cron: '*/30 * * * * ?'
     pushStockToOmsCron: '0 */5 * * * ?'
-    pushStockToOmsEnabled: true
-    pushStockToOmsUrl: 111
+    pushStockToOmsEnabled: false
+    pushStockToOmsUrl: ${pushStockToOmsUrl:localhost:12345}/erp/synchronize/update/stock
 #    pushStockToOmsCron: '*/30 * * * * ?'
     messagetimeout: 600 # 以秒为单位
     msgSizeLimit: 500
