@@ -135,3 +135,5 @@ zegobird:
     stockmessage: stockpush.olderp.message
     pushStockToOms: push:oms:productStock
   mail: liuhuan@zegobird.com,feining@zegobird.com,yupeng@zegobird.com
+  signature:
+    wmskey: WMSKEY
