@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: storage-cloud
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: GMT+8
   # 服务链路追踪
   zipkin:
     base-url: http://192.168.50.83:9411
