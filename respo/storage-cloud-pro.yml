@@ -119,8 +119,8 @@ zegobird:
   stockchange:
     cron: '0 */1 * * * ?'
     #    cron: '*/30 * * * * ?'
-    #    timeoutcron: '0 */15 * * * ?'
-    #    timeoutcron: '*/30 * * * * ?'
+    pushStockToOmsCron: '0 */5 * * * ?'
+#    pushStockToOmsCron: '*/30 * * * * ?'
     messagetimeout: 600 # 以秒为单位
     msgSizeLimit: 500
     failCountToSendMail: 5
@@ -131,4 +131,5 @@ zegobird:
   redis:
     stockHistoryRecordIdKey: stockHistoryRecordIdKey
     stockmessage: stockpush.olderp.message
+    pushStockToOms: push:oms:productStock
   mail: liuhuan@zegobird.com,feining@zegobird.com,yupeng@zegobird.com
