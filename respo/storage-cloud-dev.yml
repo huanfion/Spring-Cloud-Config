@@ -125,7 +125,7 @@ zegobird:
     cron: '0 */5 * * * ?'
     enabled: true
 #    cron: '*/30 * * * * ?'
-    pushStockToOmsCron: '0 */2 * * * ?'
+    pushStockToOmsCron: '0 */1 * * * ?'
     pushStockToOmsEnabled: true
     pushStockToOmsUrl: ${pushStockToOmsUrl:https://devtest.zegobird.com:11111/oms}/erp/synchronize/update/stock
 #    pushStockToOmsCron: '*/30 * * * * ?'
