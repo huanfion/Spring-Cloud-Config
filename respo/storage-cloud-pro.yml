@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: storage-cloud
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: "GMT+06:30"
   # 服务链路追踪
   zipkin:
     base-url: http://192.168.10.124:9411
@@ -118,8 +121,12 @@ apiseller:
 zegobird:
   stockchange:
     cron: '0 */1 * * * ?'
-    #    cron: '*/30 * * * * ?'
+    enabled: true
+#    cron: '*/30 * * * * ?'
     pushStockToOmsCron: '0 */5 * * * ?'
+    pushStockToOmsEnabled: true
+    pushStockToOmsDelay: 60 # 分钟为单位
+    pushStockToOmsUrl: ${pushStockToOmsUrl:https://devtest.zegobird.com:11111/oms}/erp/synchronize/update/stock
 #    pushStockToOmsCron: '*/30 * * * * ?'
     messagetimeout: 600 # 以秒为单位
     msgSizeLimit: 500
@@ -133,3 +140,7 @@ zegobird:
     stockmessage: stockpush.olderp.message
     pushStockToOms: push:oms:productStock
   mail: liuhuan@zegobird.com,feining@zegobird.com,yupeng@zegobird.com
+  signature:
+    wmskey: WMSKEY
+    omskey: OMSKEY
+  timeZone: "+06:30"
