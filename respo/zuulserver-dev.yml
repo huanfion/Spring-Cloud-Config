@@ -48,6 +48,10 @@ zuul:
       path: /warehouse/**
       serviceId:  warehouseService
       sensitiveHeaders: "*"
+    storage-cloud:
+      path: /cloud/**
+      serviceId:  storage-cloud
+      sensitiveHeaders: "*"
     file-service:
       path: /fileservice/**
       serviceId:  FileInfoService
