@@ -144,4 +144,4 @@ zegobird:
   signature:
     wmskey: WMSKEY
     omskey: OMSKEY
-  timeZone: GMT+8
+  timeZone: +8
