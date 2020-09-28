@@ -33,8 +33,10 @@ spring:
 
 
   redis:
-    url: redis://192.168.1.172:6379
-    database: 0
+    database: ${REDIS.DATABASE:1}
+    host: ${REDIS.HOST:192.168.1.172}
+    port: ${REDIS.PORT:6379}
+    password: ${REDIS.PASSWORD:123456}
 
   cloud:
     bus:

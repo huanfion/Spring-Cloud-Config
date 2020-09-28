@@ -50,8 +50,10 @@ spring:
     cache: false
     prefix: classpath:/templates/
   redis:
-    url: redis://192.168.1.172:6379
-    database: 0
+    database: ${REDIS.DATABASE:0}
+    host: ${REDIS.HOST:192.168.1.172}
+    port: ${REDIS.PORT:6379}
+    password: ${REDIS.PASSWORD:123456}
 eureka:
   instance:
     ip-address: 192.168.1.174
