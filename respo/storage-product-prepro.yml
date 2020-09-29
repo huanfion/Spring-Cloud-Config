@@ -85,3 +85,7 @@ feign:
       default: 
         connect-timeout: 20000
         read-timeout: 20000
+zegobird:
+  signature:
+    wmskey: WMSKEY
+    omskey: OMSKEY
