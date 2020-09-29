@@ -94,7 +94,9 @@ management:
     web:
       exposure:
         include: "*"
-
+swagger:
+  auth:
+    server: http://192.168.1.172:8886/zegooauth/oauth/token
 
 mybatis-plus:
   # spring boot集成mybatis的方式打印sql
@@ -107,26 +109,25 @@ security:
       id: oauth2-server
       user-info-uri: http://192.168.1.172:8886/zegooauth/api/member
       prefer-token-info: false
-swagger:
-  auth:
-    server: http://192.168.1.172:8886/zegooauth/oauth/token
-
 apiseller:
   api:
     queryStore: http://192.168.50.71:8888/apiseller/api/queryStroe
 
 zegobird:
   stockchange:
-    cron: '0 */1 * * * ?'
-    enabled: true
+    cron: '0 */30 * * * ?'
+    # 是否推送库存变动到ERP
+    enabled: false
 #    cron: '*/30 * * * * ?'
     pushStockToOmsCron: '0 */5 * * * ?'
-    pushStockToOmsEnabled: true
+    # 是否推送库存变动到oms
+    pushStockToOmsEnabled: false
     pushStockToOmsDelay: 60 # 分钟为单位
     pushStockToOmsUrl: ${pushStockToOmsUrl:https://devtest.zegobird.com:11111/oms}/erp/synchronize/update/stock
 #    pushStockToOmsCron: '*/30 * * * * ?'
     messagetimeout: 600 # 以秒为单位
     msgSizeLimit: 500
+    omsMsgSizeLimit: 50
     failCountToSendMail: 5
   rabbitmq:
     queue1: zegobird.storage.quene.mall_a
