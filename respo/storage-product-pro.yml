@@ -78,6 +78,7 @@ swagger:
     server: http://192.168.10.124:8886/zegooauth/oauth/token
 apiurl:
   queryCategory: http://192.168.10.171:8888/apiseller/api/queryCategory
+  syncProduct: ${OMS.API:https://oms.zegobird.com:11103}/oms/erp/synchronize/product
   updateStateUrl: http://192.168.1.121:5008/api/ProductInfo/UpdateProductState
 feign: 
   client: 
@@ -85,3 +86,7 @@ feign:
       default: 
         connect-timeout: 20000
         read-timeout: 20000
+zegobird:
+  signature:
+    wmskey: WMSKEY
+    omskey: OMSKEY        
