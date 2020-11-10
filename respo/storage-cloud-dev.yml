@@ -123,7 +123,7 @@ apiseller:
 zegobird:
   stockchange:
     cron: '0 */5 * * * ?'
-    enabled: true
+    enabled: false
 #    cron: '*/30 * * * * ?'
 #    pushStockToOmsCron: '0 */5 * * * ?'
     pushStockToOmsCron: '0 */1 * * * ?'
