@@ -92,6 +92,5 @@ zegobird:
   signature:
     wmskey: WMSKEY
     omskey: OMSKEY
-zegobird:
   product:
     pushingProductCron: ${ZEGOBIRD.PRODUCT.PUSHINGRESULTCRON:0 0 0/1 * * ?}
