@@ -80,7 +80,7 @@ swagger:
     server: http://192.168.1.172:8886/zegooauth/oauth/token
 apiurl:
   queryCategory: http://192.168.10.171:8888/apiseller/api/queryCategory
-  syncProduct: ${OMS1.API:https://pretest.zegobird.com:11112}/oms/erp/synchronize/product
+  syncProduct: ${OMS1.API:https://omspretest.zegobird.com:11112}/oms/erp/synchronize/product
   updateStateUrl: http://192.168.1.121:5008/api/ProductInfo/UpdateProductState
 feign: 
   client: 
