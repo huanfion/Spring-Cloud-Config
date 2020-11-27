@@ -79,3 +79,10 @@ swagger:
 apiurl:
   queryCategory: https://devtest.zegobird.com:11111/apiseller/api/queryCategory
   updateStateUrl: http://192.168.50.58:5005/api/ProductInfo/UpdateProductState
+
+zegobird:
+  signature:
+    wmskey: WMSKEY
+    omskey: OMSKEY
+  product:
+    pushingProductCron: ${ZEGOBIRD.PRODUCT.PUSHINGRESULTCRON:0 0 0/1 * * ?}
