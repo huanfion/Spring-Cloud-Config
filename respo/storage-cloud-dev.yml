@@ -104,7 +104,7 @@ management:
         include: "*"
 swagger:
   auth:
-    server: http://192.168.50.63:8886/zegooauth/oauth/token
+    server: http://192.168.50.61:8886/zegooauth/oauth/token
 
 mybatis-plus:
   # spring boot集成mybatis的方式打印sql
@@ -115,7 +115,7 @@ security:
   oauth2:
     resource:
       id: oauth2-server
-      user-info-uri: http://192.168.50.63:8886/zegooauth/api/member
+      user-info-uri: http://192.168.50.61:8886/zegooauth/api/member
       prefer-token-info: false
 apiseller:
   api:
