@@ -2,7 +2,7 @@ server:
   port: 8886
 eureka:
   instance:
-    ip-address: 192.168.50.63
+    ip-address: 192.168.50.61
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${eureka.instance.ip-address}:${server.port}
   client:
@@ -67,11 +67,11 @@ zuul:
 security:
   oauth2:
     client:
-      access-token-uri: http://192.168.50.63:${server.port}/zegooauth/oauth/token
-      user-authorization-uri: http://192.168.50.63:${server.port}/zegooauth/oauth/authorize
+      access-token-uri: http://192.168.50.61:${server.port}/zegooauth/oauth/token
+      user-authorization-uri: http://192.168.50.61:${server.port}/zegooauth/oauth/authorize
       client-id: clientid
     resource:
-      user-info-uri:  http://192.168.50.63:${server.port}/zegooauth/api/member
+      user-info-uri:  http://192.168.50.61:${server.port}/zegooauth/api/member
       prefer-token-info: false
 management:
   endpoint:
