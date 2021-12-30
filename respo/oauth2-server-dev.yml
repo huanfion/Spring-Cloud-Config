@@ -114,6 +114,6 @@ menu:
     - BasicData
     - ProductManagement
     - systemConfiguration
-    
+    - testmanager
 pagehelper:
   helper-dialect: postgresql
