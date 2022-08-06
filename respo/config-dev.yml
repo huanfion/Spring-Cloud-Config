@@ -15,3 +15,5 @@ management:
     web:
       exposure:
         include: "*"
+config:
+  info: master branch ,spring-cloud/config-dev.yml,version=1
